@@ -22,36 +22,39 @@ export function LoginForm() {
     return (
         <VStack
             as='form'
-            spacing={{ base: '8', sm: '4', md: '8', lg: '8', xl: '8' }}
+            spacing='8'
             py='2'
             maxW='450px'
             w='100%'
             onSubmit={handleSubmit}
         >
-            <VStack spacing='2' w='100%'>
-                <Text as='h1' textAlign='center' color='mag.primary'>
-                    Entrar
-                </Text>
-            </VStack>
-            <VStack spacing='4' w='100%'>
+            <Text as='h1' textAlign='center' color='mag.primary'>
+                Entrar
+            </Text>
+            <VStack spacing='0' w='100%'>
                 <TextInput
                     name='email'
                     label='Email'
                     isRequired
                     type='email'
+                    defaultValue='maria@email.com'
+                    isDisabled
                 />
                 <PasswordInput
                     name='password'
                     label='Senha'
                     isRequired
+                    defaultValue='teste123456'
+                    isDisabled
                 />
-                <Box w='100%'>
+                <Box w='100%' pt='2'>
                     <Link to='/forgot-password'>
                         <Text
                             w='100%'
                             textAlign='left'
+                            fontSize='1rem'
                             color='mag.primary'
-                            _hover={{ cursor: 'pointer', color: 'mag.primary' }}
+                            _hover={{ cursor: 'pointer', fontWeight: 'semibold' }}
                         >
                             Esqueceu sua senha?
                         </Text>
@@ -67,7 +70,7 @@ export function LoginForm() {
                     Entrar
                 </PrimaryButton>
             </Center>
-            <VStack spacing='8' w='100%'>
+            <VStack spacing='4' w='100%'>
                 <Flex flexDir='row' align='center' justify='space-between' w='100%'>
                     <Box w='100%' h='1px' bg='mag.primary' ml='12' />
                     <Text as='span' color='mag.primary' w='2rem' mx='4'>
@@ -84,7 +87,7 @@ export function LoginForm() {
                         placement='bottom'
                         isDisabled
                     >
-                        <WrapItem as='button'>
+                        <WrapItem as='button' type='button' disabled>
                             <Icon
                                 as={BsFacebook}
                                 color='mag.primary'
@@ -105,7 +108,7 @@ export function LoginForm() {
                         placement='bottom'
                         isDisabled
                     >
-                        <WrapItem as='button'>
+                        <WrapItem as='button' type='button' disabled>
                             <Icon
                                 as={BsGoogle}
                                 color='mag.primary'
@@ -126,7 +129,7 @@ export function LoginForm() {
                         placement='bottom'
                         isDisabled
                     >
-                        <WrapItem as='button'>
+                        <WrapItem as='button' type='button' disabled>
                             <Icon
                                 as={BsApple}
                                 color='mag.primary'
@@ -140,8 +143,10 @@ export function LoginForm() {
                         </WrapItem>
                     </Tooltip>
                 </Wrap>
-                <Text as='span' color='mag.primary' fontWeight='light' fontSize='1rem'>
-                    <Link to='/signup'>Ainda não possui conta? <Text as='span' _hover={{ fontWeight: 'semibold' }}>Criar Conta</Text></Link>
+                <Text as='span' color='mag.primary' fontWeight='light' fontSize='1rem' cursor='pointer'>
+                    <Text as='span' >
+                        Ainda não possui conta? <Text as='span' _hover={{ fontWeight: 'semibold' }}>Criar Conta</Text>
+                    </Text>
                 </Text>
             </VStack>
         </VStack>

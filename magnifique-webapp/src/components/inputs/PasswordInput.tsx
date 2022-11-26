@@ -40,12 +40,12 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, TextInputProps> = ({
                     name={name}
                     variant="flushed"
                     bgColor="none"
-                    borderColor={isDarkTheme ? "white" : 'sarsil.purple'}
-                    color={isDarkTheme ? "white" : 'sarsil.purple'}
-                    _focus={{ color: "sarsil.orange" }}
-                    focusBorderColor="sarsil.orange"
-                    _placeholder={{ color: isDarkTheme ? "gray.200" : "gray.300", fontWeight: 'thin' }}
-                    _disabled={{ bgColor: "transparent", borderColor: isDarkTheme ? "gray.200" : "gray.300", color: isDarkTheme ? "gray.200" : "gray.300", cursor: "not-allowed" }}
+                    borderColor={isDarkTheme ? "white" : 'mag.primary'}
+                    color={isDarkTheme ? "white" : 'mag.primary'}
+                    _focus={{ color: "mag.primary" }}
+                    focusBorderColor="mag.primary"
+                    _placeholder={{ color: isDarkTheme ? "mag.brown" : "mag.brown", fontWeight: 'thin' }}
+                    _disabled={{ bgColor: "transparent", borderColor: 'mag.primary', color: isDarkTheme ? "mag.brown" : "mag.brown", cursor: "not-allowed" }}
                     _invalid={{ bgColor: "transparent", color: 'red' }}
                     type={isTypePassword ? 'password' : 'text'}
                     p='2'
@@ -55,12 +55,12 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, TextInputProps> = ({
                     {...rest}
                 />
                 <InputRightElement>
-                    <Button onClick={() => setIsTypePassword(!isTypePassword)} variant='unstyled' size='xs'>
+                    <Button onClick={() => setIsTypePassword(!isTypePassword)} variant='unstyled' size='xs' isDisabled={rest.isDisabled}>
                         <Icon
                             as={isTypePassword ? AiOutlineEye : AiOutlineEyeInvisible}
                             fontSize={['1rem', '1.25rem']}
-                            color={isDarkTheme ? 'white' : 'sarsil.purple'}
-                            _hover={{ color: 'sarsil.orange' }}
+                            color={isDarkTheme ? 'white' : 'mag.primary'}
+                            _hover={{ color: 'mag.primary' }}
                         />
                     </Button>
                 </InputRightElement>
