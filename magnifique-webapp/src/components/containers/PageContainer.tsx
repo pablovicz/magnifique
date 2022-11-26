@@ -3,6 +3,7 @@ import { Flex } from "@chakra-ui/react";
 import { theme } from "../../theme/theme";
 import { Footer } from "../Footer";
 import { Header } from '../Header';
+import { Sidebar } from '../Sidebar';
 
 
 
@@ -24,27 +25,9 @@ export function PageContainer({ children, pageHeadTitle = 'Magnifique' }: PageCo
             h='100vh'
             minW={300}
             overflowX="hidden"
-            css={{
-                '::-webkit-scrollbar': {
-                    'width': '10px'
-                },
-                /* Track */
-                '::-webkit-scrollbar-track': {
-                    'background': theme?.colors.mag.light
-                },
-                /* Handle */
-                '::-webkit-scrollbar-thumb': {
-                    'background': theme?.colors.mag.brown,
-                    'borderRadius': '10px'
-                },
-                /* Handle on hover */
-                '::-webkit-scrollbar-thumb:hover': {
-                    'background': theme?.colors.mag.primaryDark
-                }
-            }}
         >
             <Header />
-            {/* <Sidebar /> */}
+            <Sidebar />
             <Flex
                 as='main'
                 flex='1'
@@ -52,7 +35,7 @@ export function PageContainer({ children, pageHeadTitle = 'Magnifique' }: PageCo
                 align='center'
                 justify='space-between'
                 px='4'
-                mt='20'
+                mt='24'
                 zIndex={4}
             >
                 {children}

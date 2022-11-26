@@ -19,7 +19,7 @@ export function Login() {
 
 
         return (
-            <PublicPageContainer pageHeadTitle="Magnifique | Login">
+            <PublicPageContainer pageHeadTitle="agnifique | Login">
                 <Center
                     boxShadow='2xl'
                     borderRadius='15px'

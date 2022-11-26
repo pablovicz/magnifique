@@ -26,16 +26,15 @@ export function Header() {
                 flexDir='row'
                 w='100%'
             >
-                <HStack spacing='4'>
-                    <Center w='5rem' h='2.5rem' p='1' bg='mag.light' borderRadius='50%'>
+                <HStack spacing='4' w='100%'>
+                    <Center w='3.5rem' h='3rem' p='1' bg='mag.light' borderRadius='50%'>
                         <Icon as={FaUserAlt} fontSize='1.5rem' color='mag.primary' />
                     </Center>
                     <Text as='span' fontSize='1rem' color='white' w='100%' textAlign='left'>
-                        Olá,
+                        Olá, Maria!
                     </Text>
                 </HStack>
                 <Options />
-
             </Flex>
         </Center>
     );

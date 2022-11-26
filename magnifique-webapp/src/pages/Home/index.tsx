@@ -1,12 +1,16 @@
+import { Text, VStack } from "@chakra-ui/react";
 import { PageContainer } from "../../components/containers/PageContainer";
+import { ProductsContainer } from "./ProductsContainer";
+import { SchedulingContainer } from "./SchedulingContainer";
 
 
 
 export function Home() {
 
     return (
-        <PageContainer pageHeadTitle="Magnifique | Home">
-            <div>teste</div>
+        <PageContainer pageHeadTitle="agnifique | Home">
+            <SchedulingContainer />
+            <ProductsContainer />
         </PageContainer>
     );
 }

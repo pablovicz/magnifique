@@ -5,14 +5,14 @@ import { TbLogout } from 'react-icons/tb';
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { FaUserCog } from "react-icons/fa";
+import { useSidebarDrawer } from "../../services/hooks/useSidebarDrawer";
 
 export function Options() {
 
-    // const { handleSignOut } = useAuthentication();
-    // const { onOpen } = useSidebarDrawer();
+    const { onOpen } = useSidebarDrawer();
 
     function handleSidebarOpen() {
-        // onOpen();
+        onOpen();
     };
 
     const navigate = useNavigate();
@@ -26,7 +26,7 @@ export function Options() {
                     icon={
                         <Icon
                             as={IoMdNotificationsOutline}
-                            _hover={{ color: 'sarsil.orange' }}
+                            _hover={{ color: 'mag.brown' }}
                             fontSize='1.5rem'
                             color='white'
                         />
@@ -34,7 +34,7 @@ export function Options() {
                     variant='unstyled'
                 />
                 <MenuList>
-                    <MenuItem isDisabled={true} _disabled={{ color: 'gray.300' }}>
+                    <MenuItem isDisabled={true} _disabled={{ color: 'mag.brown' }}>
                         <Text as='span'>
                             Nenhuma notificação
                         </Text>
@@ -51,7 +51,7 @@ export function Options() {
                             as={AiOutlineSetting}
                             fontSize='1.5rem'
                             color='white'
-                            _hover={{ color: 'sarsil.orange' }}
+                            _hover={{ color: 'mag.brown' }}
                         />
                     }
                     variant='unstyled'
@@ -61,12 +61,12 @@ export function Options() {
                         onClick={() => navigate('/perfil')}
                         isDisabled
                         bg='transparent'
-                        color='gray.400'
+                        color='mag.secondary'
                         fontWeight='normal'
                         _hover={{
-                            color: 'sarsil.orange',
+                            color: 'mag.primary',
                             fontWeight: 'semibold',
-                            bg: 'gray.75'
+                            bg: 'mag.light'
                         }}
                     >
                         <HStack align='center'>
@@ -79,12 +79,12 @@ export function Options() {
                     <MenuItem
                         onClick={() => navigate('/')}
                         bg='transparent'
-                        color='gray.400'
+                        color='mag.secondary'
                         fontWeight='normal'
                         _hover={{
-                            color: 'sarsil.orange',
+                            color: 'mag.primary',
                             fontWeight: 'semibold',
-                            bg: 'gray.75'
+                            bg: 'mag.light'
                         }}
                     >
                         <HStack align='center'>
@@ -107,7 +107,7 @@ export function Options() {
                         as={HiOutlineMenuAlt3}
                         fontSize='1.5rem'
                         color='white'
-                        _hover={{ color: 'sarsil.orange' }}
+                        _hover={{ color: 'mag.brown' }}
                     />
                 }
             />

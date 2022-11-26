@@ -14,7 +14,7 @@ export function ErrorPage() {
     }
 
     return (
-        <PublicPageContainer pageHeadTitle="Magnifique | 404">
+        <PublicPageContainer pageHeadTitle="agnifique | 404">
             <Center w='100%' h='100%'>
                 <VStack spacing='8'>
                     <Center w='100%' h='100%' maxW='20rem'>
