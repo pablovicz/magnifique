@@ -1,4 +1,5 @@
 import { ButtonGroup, Card, CardBody, CardFooter, Center, Divider, Flex, Heading, Image, Stack, Text, useBreakpointValue, VStack } from "@chakra-ui/react";
+import { useNavigate } from 'react-router-dom';
 import { PrimaryButton } from "../../components/button/PrimaryButton";
 import { Carousel } from "../../components/Carousel";
 
@@ -42,6 +43,8 @@ export function ProductsContainer() {
         xl: false
     })
 
+    const navigate = useNavigate();
+
     return (
         <Center w='full' px='4' mt='12'>
             <VStack w='100%' spacing='8'>
@@ -61,35 +64,44 @@ export function ProductsContainer() {
                     withCount={{ placement: 'bottom' }}
                 >
                     {products?.map(product => (
-                        <Card w='15rem' key={product.title} bg='white' boxShadow='lg'>
-                            <CardBody bg='white' rounded='xl'>
-                                <Image
-                                    src={product.image}
-                                    alt={product.title}
-                                    borderRadius='lg'
-                                />
-                                <Stack mt='6' spacing='3' w='100%'>
-                                    <Heading size='md' color='mag.primary'> {product.title}</Heading>
-                                    <Text color='mag.primaryDark' w='100%'>
-                                        {product.description}
-                                    </Text>
-                                    <Text color='mag.primary' fontSize='2xl' textAlign='center' fontWeight='semibold'>
-                                        {new Intl.NumberFormat('pt-BR', {
-                                            style: 'currency',
-                                            currency: 'BRL',
-                                        }).format(product.price)
-                                        }
-                                    </Text>
-                                </Stack>
-                            </CardBody>
-                            <CardFooter bg='white' rounded='2xl'>
-                                <Center w='100%'>
-                                    <PrimaryButton>
-                                        AGENDAR
-                                    </PrimaryButton>
-                                </Center>
-                            </CardFooter>
-                        </Card>
+                        <Center
+                            key={product.title}
+                            pt='2'
+                            _hover={{
+                                pt: '0',
+                                pb: '2',
+                            }}
+                        >
+                            <Card w='15rem' key={product.title} bg='white' boxShadow='lg' cursor='pointer'>
+                                <CardBody bg='white' rounded='xl'>
+                                    <Image
+                                        src={product.image}
+                                        alt={product.title}
+                                        borderRadius='lg'
+                                    />
+                                    <Stack mt='6' spacing='3' w='100%'>
+                                        <Heading size='md' color='mag.primary'> {product.title}</Heading>
+                                        <Text color='mag.primaryDark' w='100%'>
+                                            {product.description}
+                                        </Text>
+                                        <Text color='mag.primary' fontSize='2xl' textAlign='center' fontWeight='semibold'>
+                                            {new Intl.NumberFormat('pt-BR', {
+                                                style: 'currency',
+                                                currency: 'BRL',
+                                            }).format(product.price)
+                                            }
+                                        </Text>
+                                    </Stack>
+                                </CardBody>
+                                <CardFooter bg='white' rounded='2xl'>
+                                    <Center w='100%'>
+                                        <PrimaryButton onClick={() => navigate('/agendar')}>
+                                            AGENDAR
+                                        </PrimaryButton>
+                                    </Center>
+                                </CardFooter>
+                            </Card>
+                        </Center>
                     ))}
                 </Carousel>
             </VStack>

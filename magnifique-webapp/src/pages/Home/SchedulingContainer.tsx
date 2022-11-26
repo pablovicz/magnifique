@@ -1,19 +1,33 @@
-import { Box, Center, Flex, HStack, Icon, Text, Tooltip, VStack } from "@chakra-ui/react";
+import { Box, Center, Flex, HStack, Icon, Text, Tooltip, useBreakpointValue, VStack } from "@chakra-ui/react";
 import { subDays, addDays, format } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
 import { AiFillPlusCircle } from 'react-icons/ai';
 import { CustomIconButton } from "../../components/button/CustomIconButton";
 import { RenderByCondition } from "../../components/utils/RenderByCondition";
-import { getDaysArray, range } from "../../utils/utils";
+import { getDaysArray } from "../../utils/utils";
 
 
 
 export function SchedulingContainer() {
 
+    const isMobileVersion = useBreakpointValue({
+        base: false,
+        sm: true,
+        md: false,
+        lg: false,
+        xl: false
+    });
+
+    const rangeSize = isMobileVersion ? 1 : 2;
+
     const now = new Date();
-    const start = subDays(now, 2);
-    const end = addDays(now, 2);
+    const start = subDays(now, rangeSize);
+    const end = addDays(now, rangeSize);
 
     const appointment = addDays(now, 1);
+
+
+    const navigate = useNavigate();
 
 
     return (
@@ -45,12 +59,14 @@ export function SchedulingContainer() {
                         _hover={{
                             color: 'mag.primary'
                         }}
-                        onClick={() => { }}
+                        onClick={() => navigate('/agendar')}
                         icon={<Icon as={AiFillPlusCircle} fontSize='1.5rem' />}
                         p='0'
                     />
                 </Flex>
-                <HStack spacing='4'>
+                <HStack
+                    spacing='4'
+                >
                     {getDaysArray(start, end).map(day => (
                         <Center
                             key={day.getTime()}

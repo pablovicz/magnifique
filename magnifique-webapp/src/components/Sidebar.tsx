@@ -21,14 +21,14 @@ export function Sidebar() {
             path: '/perfil',
         },
         {
-            title: 'Meus Seguros',
+            title: 'Meus Agendamentos',
             icon: <Img src='' alt="FiCheckSquareIcon" />,
-            path: '/meus-seguros',
+            path: '/agendamentos',
         },
         {
-            title: 'Acionar',
+            title: 'Agendar',
             icon: <Img src='' alt="FiPhone" />,
-            path: '/acionar',
+            path: '/agendar',
         },
     ] as { title: string; icon: ReactNode; path: string }[];
 

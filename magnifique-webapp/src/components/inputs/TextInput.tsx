@@ -48,7 +48,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, TextInputProps> = ({
                     _invalid={{ bgColor: "transparent", color: 'red' }}
                     p='2'
                     size="md"
-                    fontSize={['16', '20']}
+                    fontSize={['1rem', '1rem']}
                     ref={ref}
                     {...rest}
                 />

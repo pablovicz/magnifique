@@ -50,7 +50,7 @@ const InputBase: ForwardRefRenderFunction<HTMLInputElement, TextInputProps> = ({
                     type={isTypePassword ? 'password' : 'text'}
                     p='2'
                     size="md"
-                    fontSize={['16', '20']}
+                    fontSize={['1rem', '1rem']}
                     ref={ref}
                     {...rest}
                 />
