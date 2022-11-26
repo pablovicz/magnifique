@@ -20,6 +20,9 @@ export function Footer({ variant = 'outline', ...rest }: FooterProps) {
         <Center
             as='footer'
             w='100%'
+            py={variant !== 'unstyled' ? '4' : undefined}
+            px={variant !== 'unstyled' ? { base: '8', sm: '4', md: '8', lg: '8', xl: '8' } : undefined}
+            mt={variant !== 'unstyled' ? '16' : undefined}
             borderTopStyle={variant === 'outline' ? 'solid' : undefined}
             borderTopWidth={variant === 'outline' ? '1px' : undefined}
             borderTopColor={variant === 'outline' ? 'gray.50' : undefined}

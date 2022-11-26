@@ -1,12 +1,17 @@
-import { Center, Text, VStack } from "@chakra-ui/react";
+import { Button, Center, Text, VStack } from "@chakra-ui/react";
+import { useNavigate } from 'react-router-dom';
 import Lottie from "react-lottie-player";
 import { PublicPageContainer } from "../../components/containers/PublicPageContainer";
-import { Link } from 'react-router-dom';
 import asset from '../../assets/404.json';
 
 
 export function ErrorPage() {
 
+    const navigate = useNavigate();
+
+    function handleBack(){
+        navigate('/');
+    }
 
     return (
         <PublicPageContainer pageHeadTitle="Magnifique | 404">
@@ -25,7 +30,11 @@ export function ErrorPage() {
                         <Text w='100%' align='center' fontSize='1rem'>
                             Página não encontrada
                         </Text>
-                        <Link to='/'>
+                        <Button
+                            variant='unstyled'
+                            as='a'
+                            onClick={handleBack}
+                        >
                             <Text
                                 w='100%'
                                 align='center'
@@ -36,7 +45,7 @@ export function ErrorPage() {
                             >
                                 Voltar
                             </Text>
-                        </Link>
+                        </Button>
                     </VStack>
                 </VStack>
             </Center>
